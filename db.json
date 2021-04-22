@@ -1,0 +1,36 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Awesome robot toy",
+      "description": "Lorem ipsum dolor sit amet.",
+      "price": "19.99",
+      "images": ["/img/robot.png"],
+      "tag": {
+        "name": "Sale!",
+        "style": { "color": "#E72929", "fontWeight": 700 }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Nice socks",
+      "description": "Turpis tellus quis feugiat elit.",
+      "price": "5.20",
+      "images": ["/img/socks.png"],
+      "tag": {}
+    },
+    {
+      "id": 3,
+      "title": "Pink hoodie",
+      "description": "Lectus cras quisque eget volutpat.",
+      "price": "32.00",
+      "images": [
+        "https://images.pexels.com/photos/6311072/pexels-photo-6311072.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260g",
+        "https://images.pexels.com/photos/6311107/pexels-photo-6311107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        "https://images.pexels.com/photos/6311079/pexels-photo-6311079.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
+        "https://images.pexels.com/photos/6311087/pexels-photo-6311087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+      ],
+      "tag": {}
+    }
+  ]
+}
