@@ -38,16 +38,15 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/_mixins";
+
 .gallery {
   height: 520px;
   border-radius: 12px;
   overflow: hidden;
 
   img {
-    height: 100%;
-    width: 100%;
-    //object-position: top;
-    object-fit: cover;
+    @include mixins.img-fit-container;
   }
 }
 
@@ -67,11 +66,9 @@ export default {
   }
 
   &__image {
+    @include mixins.img-fit-container;
+
     cursor: pointer;
-    height: 100%;
-    width: 100%;
-    object-position: center;
-    object-fit: cover;
     border-radius: 8px;
   }
 }

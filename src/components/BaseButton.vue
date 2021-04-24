@@ -12,8 +12,6 @@ export default {
 
 <style lang="scss" scoped>
 .button {
-  border: none;
-  outline: none;
   background-color: #282828;
   font-weight: 700;
   padding: 15px 25px 15px 25px;
@@ -21,7 +19,6 @@ export default {
   border-radius: 8px;
   color: white;
   font-size: 22px;
-  font-family: inherit;
 
   &:hover {
     cursor: pointer;

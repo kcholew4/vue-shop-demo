@@ -16,24 +16,12 @@ export default {
 </script>
 
 <style lang="scss">
-* {
-  margin: 0;
-  box-sizing: border-box;
-}
-
-a {
-  color: inherit;
-  text-decoration: inherit;
-}
+@use "@/assets/scss/_reset";
 
 #app {
   background-color: #fdfdfb;
   font-family: "Miriam Libre", sans-serif;
   height: 100vh;
   font-size: 18px;
-}
-
-.border {
-  border: 1px solid black;
 }
 </style>

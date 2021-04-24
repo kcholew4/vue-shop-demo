@@ -36,6 +36,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@use "@/assets/scss/_mixins";
+
 .item-card {
   &__cover {
     border-radius: 22px;
@@ -43,9 +45,7 @@ export default {
     height: 235px;
 
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+      @include mixins.img-fit-container;
     }
   }
 

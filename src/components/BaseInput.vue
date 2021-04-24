@@ -23,11 +23,7 @@ export default {
     display: block;
     width: 100%;
     height: 45px;
-    font-size: inherit;
-    border: none;
-    outline: none;
     border-bottom: 1px solid black;
-    font-family: inherit;
   }
 
   &__label {
