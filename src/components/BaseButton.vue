@@ -18,7 +18,7 @@ export default {
   font-weight: 700;
   padding: 15px 25px 15px 25px;
   //box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-  border-radius: 12px;
+  border-radius: 8px;
   color: white;
   font-size: 22px;
   font-family: inherit;
