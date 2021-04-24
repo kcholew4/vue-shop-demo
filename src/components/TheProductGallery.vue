@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="product.images">
     <div class="gallery">
       <img :src="product.images[currentImageIndex]" alt="" />
     </div>
@@ -32,7 +32,9 @@ export default {
     },
   },
   computed: {
-    ...mapState(["product"]),
+    ...mapState({
+      product: (state) => state.products.product,
+    }),
   },
 };
 </script>

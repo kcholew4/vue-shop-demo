@@ -34,10 +34,12 @@ export default {
     ProductCard,
   },
   computed: {
-    ...mapState(["products"]),
+    ...mapState({
+      products: (state) => state.products.products,
+    }),
   },
   methods: {
-    ...mapActions(["fetchProducts"]),
+    ...mapActions("products", ["fetchProducts"]),
   },
   created() {
     this.fetchProducts();

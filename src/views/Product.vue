@@ -19,7 +19,7 @@ export default {
     TheProductHeader,
   },
   methods: {
-    ...mapActions(["fetchProductById"]),
+    ...mapActions("products", ["fetchProductById"]),
   },
   created() {
     this.fetchProductById(this.id);

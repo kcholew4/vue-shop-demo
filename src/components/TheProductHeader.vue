@@ -29,7 +29,9 @@ export default {
     TheProductGallery,
   },
   computed: {
-    ...mapState(["product"]),
+    ...mapState({
+      product: (state) => state.products.product,
+    }),
     showPrice() {
       return `${this.product.price}$`;
     },
