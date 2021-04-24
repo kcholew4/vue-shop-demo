@@ -1,6 +1,6 @@
 <template>
   <div class="product-header">
-    <TheProductGallery class="product-header__image" />
+    <TheProductGallery class="product-header__gallery" />
     <div class="product-header__details">
       <div class="product-header__title">{{ product.title }}</div>
       <div class="stock-status product-header__status">
@@ -49,12 +49,11 @@ export default {
   margin: 0 auto 0 auto;
   display: flex;
 
-  &__image {
+  &__gallery {
     flex: 1 1 auto;
     margin-right: 35px;
-    border-radius: 12px;
-    overflow: hidden;
-    //height: 520px;
+    //border-radius: 12px;
+    overflow: auto;
   }
 
   &__details {
