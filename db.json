@@ -2,10 +2,10 @@
   "products": [
     {
       "id": 1,
-      "title": "Awesome robot toy",
+      "title": "Awesome Robot Toy",
       "description": "Lorem ipsum dolor sit amet.",
       "price": "19.99",
-      "images": ["/img/robot.png"],
+      "images": ["/img/robot_1.jpg", "/img/robot_2.jpg", "/img/robot_3.jpg"],
       "inStock": 12,
       "tag": {
         "name": "Sale!",
@@ -14,24 +14,35 @@
     },
     {
       "id": 2,
-      "title": "Nice socks",
+      "title": "Nice Socks",
       "description": "Turpis tellus quis feugiat elit.",
       "price": "5.20",
-      "images": ["/img/socks.png"],
+      "images": [
+        "/img/socks_1.jpg",
+        "/img/socks_2.jpg",
+        "/img/socks_3.jpg",
+        "/img/socks_4.jpg",
+        "/img/socks_5.jpg",
+        "/img/socks_6.jpg"
+      ],
       "inStock": 3,
       "tag": {}
     },
     {
       "id": 3,
-      "title": "Pink hoodie",
+      "title": "Black Hoodie",
       "description": "Lectus cras quisque eget volutpat.",
       "price": "32.00",
-      "images": [
-        "https://images.pexels.com/photos/6311072/pexels-photo-6311072.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260g",
-        "https://images.pexels.com/photos/6311107/pexels-photo-6311107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-        "https://images.pexels.com/photos/6311079/pexels-photo-6311079.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
-        "https://images.pexels.com/photos/6311087/pexels-photo-6311087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
-      ],
+      "images": ["/img/hoodie_1.jpg", "/img/hoodie_2.jpg", "/img/hoodie_3.jpg"],
+      "inStock": 20,
+      "tag": {}
+    },
+    {
+      "id": 4,
+      "title": "Cat Mom Mug",
+      "description": "Lectus cras quisque eget volutpat.",
+      "price": "32.00",
+      "images": ["/img/mug_1.jpg", "/img/mug_2.jpg", "/img/mug_3.jpg"],
       "inStock": 20,
       "tag": {}
     }
