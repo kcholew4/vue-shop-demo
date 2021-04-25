@@ -55,7 +55,7 @@ export default {
 .content-container {
   box-sizing: content-box;
   padding: 0 25px 0 25px;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto 0 auto;
 }
 
@@ -74,7 +74,7 @@ export default {
 
   &__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     grid-column-gap: 35px;
     grid-row-gap: 35px;
   }
