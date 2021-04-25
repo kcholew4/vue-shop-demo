@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
-@use "@/assets/scss/_reset";
+@use "@/assets/scss/_default";
 
 #app {
   background-color: #fdfdfb;
