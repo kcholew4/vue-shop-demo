@@ -1,6 +1,6 @@
 <template>
   <div class="product-header">
-    <TheProductGallery class="product-header__gallery" />
+    <ProductGallery class="product-header__gallery" />
     <div class="product-header__details">
       <div class="product-header__title">{{ product.title }}</div>
       <div class="stock-status product-header__status">
@@ -36,12 +36,12 @@
 </template>
 
 <script>
-import TheProductGallery from "@/components/TheProductGallery.vue";
+import ProductGallery from "@/components/ProductGallery.vue";
 import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   components: {
-    TheProductGallery,
+    ProductGallery,
   },
   data() {
     return {

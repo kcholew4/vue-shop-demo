@@ -1,12 +1,12 @@
 <template>
   <div class="product">
-    <TheProductHeader />
+    <ProductHeader />
   </div>
 </template>
 
 <script>
 import { mapActions } from "vuex";
-import TheProductHeader from "@/components/TheProductHeader.vue";
+import ProductHeader from "@/components/ProductHeader.vue";
 
 export default {
   props: {
@@ -16,7 +16,7 @@ export default {
     },
   },
   components: {
-    TheProductHeader,
+    ProductHeader,
   },
   methods: {
     ...mapActions("products", ["fetchProductById"]),
