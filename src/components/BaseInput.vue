@@ -8,11 +8,20 @@
       v-bind="$attrs"
       @input="$emit('input', $event.target.value)"
     />
+    <div class="input-field__message">
+      <div v-html="validation.message"></div>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  props: {
+    validation: {
+      type: Object,
+      required: false,
+    },
+  },
   inheritAttrs: false,
 };
 </script>
@@ -28,6 +37,15 @@ export default {
 
   &__label {
     margin-bottom: 5px;
+  }
+
+  &__message {
+    margin-top: 5px;
+    font-size: 16px;
+
+    div {
+      height: 1.5em;
+    }
   }
 }
 </style>
