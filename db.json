@@ -6,6 +6,7 @@
       "description": "Lorem ipsum dolor sit amet.",
       "price": "19.99",
       "images": ["/img/robot.png"],
+      "inStock": 12,
       "tag": {
         "name": "Sale!",
         "style": { "color": "#E72929", "fontWeight": 700 }
@@ -17,6 +18,7 @@
       "description": "Turpis tellus quis feugiat elit.",
       "price": "5.20",
       "images": ["/img/socks.png"],
+      "inStock": 3,
       "tag": {}
     },
     {
@@ -30,6 +32,7 @@
         "https://images.pexels.com/photos/6311079/pexels-photo-6311079.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
         "https://images.pexels.com/photos/6311087/pexels-photo-6311087.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
       ],
+      "inStock": 20,
       "tag": {}
     }
   ]
