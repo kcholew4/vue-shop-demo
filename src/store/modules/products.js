@@ -1,4 +1,5 @@
 import ProductService from "@/services/ProductService.js";
+import currency from "currency.js";
 
 export const namespaced = true;
 
@@ -23,7 +24,7 @@ export const actions = {
     });
   },
   fetchProductById({ commit, getters }, id) {
-    const product = getters.getProductById(id);
+    const product = getters.productById(id);
 
     if (!product) {
       return ProductService.getProduct(id).then(({ data }) => {
@@ -38,9 +39,21 @@ export const actions = {
 };
 
 export const getters = {
-  getProductById(state) {
+  productById(state) {
     return (id) => {
       return state.products.find((element) => element.id == id);
+    };
+  },
+  productPrice(state) {
+    return currency(state.product.price, {
+      pattern: "!#",
+    }).format();
+  },
+  productPriceById(state, getters) {
+    return (id) => {
+      return currency(getters.productById(id).price, {
+        pattern: "!#",
+      }).format();
     };
   },
 };

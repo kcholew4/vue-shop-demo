@@ -6,7 +6,7 @@
     <div class="item-card__title">{{ title }}</div>
     <div class="item-card__description">{{ description }}</div>
     <div class="item-card__details">
-      <div class="item-card__price">{{ showPrice }}</div>
+      <div class="item-card__price">{{ price }}</div>
       <div v-if="tag" class="item-card__tag" :style="tag.style">
         {{ tag.name }}
       </div>
@@ -25,11 +25,6 @@ export default {
       type: Object,
       required: false,
       default: () => {},
-    },
-  },
-  computed: {
-    showPrice() {
-      return `${this.price}$`;
     },
   },
 };

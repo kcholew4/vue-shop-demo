@@ -8,12 +8,27 @@
         <div class="stock-status__status">In stock</div>
       </div>
       <div class="product-header__inputs">
-        <BaseInput type="number" value="1" class="input-field" name="quantity">
+        <BaseInput
+          type="number"
+          value="1"
+          class="input-field"
+          name="quantity"
+          autocomplete="off"
+          min="1"
+          :max="product.inStock"
+          v-model.number="quantity"
+          @input="validate()"
+          :validation="formValidation"
+        >
           Quantity:
         </BaseInput>
       </div>
-      <div class="product-header__summary">{{ showPrice }}</div>
-      <BaseButton class="product-header__add-to-cart" :block="true">
+      <div class="product-header__summary">{{ productPrice }}</div>
+      <BaseButton
+        class="product-header__add-to-cart"
+        :block="true"
+        @click.native="add()"
+      >
         Add to cart
       </BaseButton>
     </div>
@@ -22,19 +37,48 @@
 
 <script>
 import TheProductGallery from "@/components/TheProductGallery.vue";
-import { mapState } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   components: {
     TheProductGallery,
   },
+  data() {
+    return {
+      quantity: 1,
+      formValidation: {
+        error: false,
+        message: "",
+      },
+    };
+  },
+  methods: {
+    ...mapActions("cart", ["addToCart"]),
+    add() {
+      this.addToCart({
+        product: this.product,
+        quantity: this.quantity,
+      });
+    },
+    validate() {
+      if (this.quantity < 1 || this.quantity > this.product.inStock) {
+        this.formValidation = {
+          error: true,
+          message: `Select quantity between <b>1</b> and <b>${this.product.inStock}</b>`,
+        };
+      } else {
+        this.formValidation = {
+          error: false,
+          message: "",
+        };
+      }
+    },
+  },
   computed: {
     ...mapState({
       product: (state) => state.products.product,
     }),
-    showPrice() {
-      return `${this.product.price}$`;
-    },
+    ...mapGetters("products", ["productPrice"]),
   },
 };
 </script>
@@ -54,7 +98,6 @@ export default {
   &__gallery {
     flex: 1 1 auto;
     margin-right: 35px;
-    //border-radius: 12px;
     overflow: auto;
   }
 

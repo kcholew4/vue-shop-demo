@@ -15,7 +15,7 @@
               :title="product.title"
               :description="product.description"
               :cover="product.images[0]"
-              :price="product.price"
+              :price="productPriceById(product.id)"
               :tag="product.tag"
             />
           </router-link>
@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { mapActions, mapState } from "vuex";
+import { mapActions, mapState, mapGetters } from "vuex";
 import ProductCard from "@/components/ProductCard.vue";
 
 export default {
@@ -37,6 +37,7 @@ export default {
     ...mapState({
       products: (state) => state.products.products,
     }),
+    ...mapGetters("products", ["productPriceById"]),
   },
   methods: {
     ...mapActions("products", ["fetchProducts"]),

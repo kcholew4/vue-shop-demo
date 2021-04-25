@@ -13,6 +13,7 @@
     "@fortawesome/vue-fontawesome": "^2.0.2",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "currency.js": "^2.0.3",
     "lodash": "^4.17.21",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",

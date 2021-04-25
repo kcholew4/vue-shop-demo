@@ -7,18 +7,20 @@
         </router-link>
       </div>
       <div class="nav-links">
-        <div class="cart">
-          <font-awesome-icon class="cart__icon" icon="shopping-cart" />
-          <div class="cart__name">Cart</div>
-          <div class="cart__count">(1)</div>
-        </div>
+        <CartButton class="cart-button" />
       </div>
     </div>
   </nav>
 </template>
 
 <script>
-export default {};
+import CartButton from "@/components/CartButton.vue";
+
+export default {
+  components: {
+    CartButton,
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -46,27 +48,6 @@ export default {};
 
 .nav-links {
   font-size: 20px;
-}
-
-.cart {
-  display: flex;
-  align-items: center;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  &__icon {
-    margin-right: 10px;
-  }
-
-  &__count {
-    font-weight: 700;
-  }
-
-  &__name {
-    margin-right: 0.3rem;
-  }
 }
 
 .bold {
