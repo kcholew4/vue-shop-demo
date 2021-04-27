@@ -102,4 +102,15 @@ export const getters = {
         .format();
     };
   },
+  itemQuantity(state, getters) {
+    return (id) => {
+      const index = getters.itemIndex(id);
+
+      if (index < 0) {
+        return 0;
+      }
+
+      return state.inCart[index].quantity;
+    };
+  },
 };

@@ -28,5 +28,10 @@ export default {
   &--block {
     width: 100%;
   }
+
+  &:disabled {
+    cursor: inherit;
+    background-color: #828282;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="product">
-    <ProductHeader />
+    <ProductHeader v-if="doneFetching" />
   </div>
 </template>
 
@@ -9,6 +9,11 @@ import { mapActions } from "vuex";
 import ProductHeader from "@/components/ProductHeader.vue";
 
 export default {
+  data() {
+    return {
+      doneFetching: false,
+    };
+  },
   props: {
     id: {
       type: [Number, String],
@@ -22,7 +27,8 @@ export default {
     ...mapActions("products", ["fetchProductById"]),
   },
   created() {
-    this.fetchProductById(this.id);
+    //Make sure data is already fetched before rendering the component
+    this.fetchProductById(this.id).then(() => (this.doneFetching = true));
   },
 };
 </script>

@@ -18,7 +18,6 @@
           v-model.number="quantity"
           @blur="validate"
           :max="product.inStock"
-          :validation="formValidation"
         >
           Quantity:
         </BaseInput>
@@ -28,6 +27,7 @@
         class="product-header__add-to-cart"
         :block="true"
         @click.native="add()"
+        :disabled="disableButton"
       >
         Add to cart
       </BaseButton>
@@ -46,10 +46,6 @@ export default {
   data() {
     return {
       quantity: 1,
-      formValidation: {
-        error: false,
-        message: "",
-      },
     };
   },
   methods: {
@@ -61,18 +57,32 @@ export default {
       });
     },
     validate() {
-      if (this.quantity < 1) {
-        this.quantity = 1;
-      } else if (this.quantity > this.product.inStock) {
-        this.quantity = this.product.inStock;
+      if (this.leftInStock < 1) {
+        this.quantity = 0;
+      } else {
+        if (this.quantity < 1) {
+          this.quantity = 1;
+        } else if (this.quantity > this.leftInStock) {
+          this.quantity = this.leftInStock;
+        }
       }
     },
   },
   computed: {
+    leftInStock() {
+      return this.product.inStock - this.itemQuantity(this.product.id);
+    },
+    disableButton() {
+      return this.leftInStock < 1 ? true : false;
+    },
     ...mapState({
       product: (state) => state.products.product,
     }),
     ...mapGetters("products", ["productPrice"]),
+    ...mapGetters("cart", ["itemQuantity"]),
+  },
+  mounted() {
+    this.validate();
   },
 };
 </script>
