@@ -15,9 +15,9 @@
           name="quantity"
           autocomplete="off"
           min="1"
-          :max="product.inStock"
           v-model.number="quantity"
-          @input="validate()"
+          @blur="validate"
+          :max="product.inStock"
           :validation="formValidation"
         >
           Quantity:
@@ -61,16 +61,10 @@ export default {
       });
     },
     validate() {
-      if (this.quantity < 1 || this.quantity > this.product.inStock) {
-        this.formValidation = {
-          error: true,
-          message: `Select quantity between <b>1</b> and <b>${this.product.inStock}</b>`,
-        };
-      } else {
-        this.formValidation = {
-          error: false,
-          message: "",
-        };
+      if (this.quantity < 1) {
+        this.quantity = 1;
+      } else if (this.quantity > this.product.inStock) {
+        this.quantity = this.product.inStock;
       }
     },
   },
