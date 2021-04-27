@@ -28,6 +28,9 @@ export const mutations = {
   HIDE_CART(state) {
     state.cartModal.active = false;
   },
+  LOAD_CART_STATE(state, savedState) {
+    Object.assign(state, savedState);
+  },
 };
 
 export const actions = {
@@ -57,6 +60,9 @@ export const actions = {
       dispatch("hideOverflow", null, { root: true });
       commit("SHOW_CART");
     }
+  },
+  loadCartState({ commit }, savedState) {
+    commit("LOAD_CART_STATE", savedState);
   },
 };
 
