@@ -26,7 +26,7 @@ export default {
 <style lang="scss" scoped>
 .nav-bar {
   display: flex;
-  height: 96px;
+  flex: 0 0 96px;
   background-color: white;
   box-shadow: 0px 0px 23px -9px rgba(0, 0, 0, 0.25);
   justify-content: center;

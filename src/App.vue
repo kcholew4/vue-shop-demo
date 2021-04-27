@@ -1,7 +1,8 @@
 <template>
   <div id="app" :class="{ 'hide-overflow': hideOverflow }">
     <NavBar />
-    <router-view />
+    <router-view style="margin-bottom: 100px" />
+    <Footer />
     <CartModal v-if="cartModal.active" />
   </div>
 </template>
@@ -9,11 +10,13 @@
 <script>
 import { mapState } from "vuex";
 import NavBar from "@/components/NavBar.vue";
+import Footer from "@/components/Footer.vue";
 import CartModal from "@/components/CartModal.vue";
 
 export default {
   components: {
     NavBar,
+    Footer,
     CartModal,
   },
   computed: {
@@ -29,6 +32,8 @@ export default {
 @use "@/assets/scss/_default";
 
 #app {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
   position: relative;
   overflow: auto;
