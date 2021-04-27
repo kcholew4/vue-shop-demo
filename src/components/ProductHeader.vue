@@ -3,10 +3,7 @@
     <ProductGallery class="product-header__gallery" />
     <div class="product-header__details">
       <div class="product-header__title">{{ product.title }}</div>
-      <div class="stock-status product-header__status">
-        <font-awesome-icon icon="circle" class="stock-status__icon" />
-        <div class="stock-status__status">In stock</div>
-      </div>
+      <StockStatus :stock="leftInStock" class="product-header__status" />
       <div class="product-header__inputs">
         <BaseInput
           type="number"
@@ -37,11 +34,13 @@
 
 <script>
 import ProductGallery from "@/components/ProductGallery.vue";
+import StockStatus from "@/components/StockStatus.vue";
 import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   components: {
     ProductGallery,
+    StockStatus,
   },
   data() {
     return {
@@ -135,25 +134,6 @@ export default {
 
   &__add-to-cart {
     margin-top: 15px;
-  }
-}
-
-.stock-status {
-  display: flex;
-  align-items: center;
-
-  &__icon {
-    width: 15px;
-    color: #42d136;
-    margin-right: 8px;
-
-    &--yellow {
-      color: #edda33;
-    }
-
-    &--red {
-      color: #ea1044;
-    }
   }
 }
 </style>
