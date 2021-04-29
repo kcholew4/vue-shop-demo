@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "title": "Awesome Robot Toy",
+      "title": "Robot Toy",
       "description": "Lorem ipsum dolor sit amet.",
       "price": "19.99",
       "images": ["/img/robot_1.jpg", "/img/robot_2.jpg", "/img/robot_3.jpg"],
@@ -14,7 +14,7 @@
     },
     {
       "id": 2,
-      "title": "Nice Socks",
+      "title": "Socks",
       "description": "Turpis tellus quis feugiat elit.",
       "price": "5.20",
       "images": [
